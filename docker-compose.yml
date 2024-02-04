@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  weather:
+    env_file:
+      - prod.env
+    build: .
+    ports:
+      - "8000:8000"
+    container_name: weather
+    restart: unless-stopped
+
+networks:
+  default:
+    name: weather
